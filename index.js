@@ -36,6 +36,12 @@ app.get('/api/activities/:activity', function(req, res) {
   });
 });
 
+app.post('/api/activities/:activity', function(req, res) {
+  Stat.updateOne({name: req.params.activity}, { $push: {stat: req.body.updateBox}}).then(function () {
+    res.redirect('/api/activities');
+  });
+  });
+
 app.post('/api/activities', function(req, res) {
   let stat = new Stat({
     name: req.body.inputStatName,
