@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 
-const Stat = new mongoose.Schema({
+const statSchema = new mongoose.Schema({
   name: { type: String },
   type: { type: String },
-  stat: { type: Number},
+  stat: { type: Array},
   date: { type: Date, default: Date.now }
 });
+
+const Stat = mongoose.model('Stat', statSchema, 'stat');
+
+module.exports= Stat;

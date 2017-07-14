@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{#activity}}{{name}}{{/activity}} Stat Page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+  </head>
+  <body>
+    <h3>{{#activity}}{{name}}{{/activity}} Stat Page</h3>
+    {{#activity}}
+    <ul class="allStats">
+      <li>{{name}}</li>
+      <li>{{type}}</li>
+      <li>{{stat}}</li>
+      <li><form method="post"><input id="updateBox" type="text" placeholder="update stat here"></form></li>
+      {{/activity}}
+    </ul>
+  </body>
+</html>
