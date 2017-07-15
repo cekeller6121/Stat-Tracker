@@ -70,6 +70,18 @@ app.post('/api/activities', function(req, res) {
 //   console.log("Access denied, bud");
 // });
 
+// *** Add first record to statsdb user collection ***
+let user = new User({
+  username: "chadwick",
+  password: "pass"
+});
+
+user.save().then(function() {
+  console.log("user added to database")
+}).catch(function() {
+  console.log("Access denied, bud");
+});
+
 app.listen(3000, function(req, res) {
   console.log("Port 3000 wants your stats");
 });
